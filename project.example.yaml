@@ -1,0 +1,20 @@
+
+simulation-settings:
+  rpcs:
+    - chain-name: ethereum-testnet-sepolia-base-1
+      url: https://base-sepolia.g.alchemy.com/v2/{ALCHEMY_API_KEY}
+
+# ==========================================================================
+#       forwarder: "0x..."                          # Forwarder contract address on the chain
+
+# ==========================================================================
+staging-settings:
+  rpcs:
+    - chain-name: ethereum-testnet-sepolia-base-1
+      url: https://base-sepolia.g.alchemy.com/v2/{ALCHEMY_API_KEY}
+
+# ==========================================================================
+production-settings:
+  rpcs:
+    - chain-name: ethereum-testnet-sepolia-base-1
+      url: https://base-sepolia.g.alchemy.com/v2/{ALCHEMY_API_KEY}

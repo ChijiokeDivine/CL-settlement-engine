@@ -1,0 +1,10 @@
+{
+  "schedule": "0 */1 * * *",
+  "marketApiUrl": "http://127.0.0.1:8000/api/oracle/resolvable-markets/",
+  "evm": {
+    "proxyAddress": "0x82300bd7c3958625581cc2f77bc6464dcecdf3e5",
+    "consumerAddress": "0x630539C1BE4464E1b125b5180DFB3C607Fd7238F",
+    "chainSelectorName": "ethereum-testnet-sepolia-base-1",
+    "gasLimit": "1000000"
+  }
+}
