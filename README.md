@@ -272,6 +272,8 @@ After this you will get a set of options similar to:
 2. evm:ChainSelector:16015286601757825753@1.0.0 LogTrigger
 
 Enter your choice (1-2):
+<img width="650" height="183" alt="image" src="https://github.com/user-attachments/assets/8cd3a6a3-09ac-4759-8e7a-5a1cff227a26" />
+
 ```
 
 You can simulate each of the following triggers types as follows
