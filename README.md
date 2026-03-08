@@ -4,6 +4,9 @@ This project is a **Chainlink CRE (Chainlink Runtime Environment) workflow** tha
 
 you can view the smart contract (solidity program) here -> https://github.com/ChijiokeDivine/harbor-predict-main
 
+![screenshot_1 5x](https://github.com/user-attachments/assets/0d98f794-0727-485b-8495-83a7d9bed9ce)
+
+
 ---
 
 ## Architecture Overview
