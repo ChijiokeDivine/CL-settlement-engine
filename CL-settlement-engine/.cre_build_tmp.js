@@ -15762,6 +15762,21 @@ var doResolution = async (runtime2) => {
       console.log(`❌ Failed resolving market ${market.marketId}:`, err);
     }
   }
+  if (resolvedIds.length > 0) {
+    try {
+      const cronSecretKey = runtime2.getSecret({ id: "CRON_SECRET_KEY" }).result().value;
+      http2.sendRequest(runtime2, (sendRequester) => {
+        const res = sendRequester.sendRequest({
+          method: "GET",
+          url: `http://127.0.0.1:8000/api/cron/resolve-market-offchain/?token=${cronSecretKey}`
+        }).result();
+        return { status: res.statusCode };
+      }, ConsensusAggregationByFields({
+        status: identical
+      }))().result();
+      console.log("✅ Offchain endpoint notified successfully");
+    } catch (err) {}
+  }
   const summary = [
     resolvedIds.length > 0 ? `Resolved: ${resolvedIds.join(", ")}` : null,
     failedIds.length > 0 ? `Failed: ${failedIds.join(", ")}` : null

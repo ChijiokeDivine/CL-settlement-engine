@@ -316,6 +316,36 @@ const doResolution = async (runtime: any): Promise<string> => {
     }
   }
 
+  // Notify offchain endpoint if at least one market was resolved successfully
+  if (resolvedIds.length > 0) {
+    try {
+      const cronSecretKey = runtime.getSecret({ id: 'CRON_SECRET_KEY' }).result().value
+
+      http
+        .sendRequest(
+          runtime,
+          (sendRequester) => {
+            const res = sendRequester
+              .sendRequest({
+                method: 'GET',
+                url: `http://127.0.0.1:8000/api/cron/resolve-market-offchain/?token=${cronSecretKey}`,
+              })
+              .result()
+
+            return { status: res.statusCode } as { status: number }
+          },
+          ConsensusAggregationByFields<{ status: number }>({
+            status: identical,
+          }),
+        )()
+        .result()
+
+      console.log('✅ Offchain endpoint notified successfully')
+    } catch (err) {
+      // console.log('❌ Failed to notify offchain endpoint:', err)
+    }
+  }
+
   const summary = [
     resolvedIds.length > 0 ? `Resolved: ${resolvedIds.join(', ')}` : null,
     failedIds.length > 0 ? `Failed: ${failedIds.join(', ')}` : null,
