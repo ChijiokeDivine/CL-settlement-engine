@@ -10,24 +10,9 @@ you can view the smart contract (solidity program) here -> https://github.com/Ch
 ---
 
 ## Architecture Overview
+<img width="600" height="500" alt="Gemini_Generated_Image" src="https://github.com/user-attachments/assets/363c8bd1-bf09-4f8a-a719-92c310483bdc" />
 
-```
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  Cron Trigger   │────▶│  Django Backend  │────▶│  CRE Workflow   │
-│  (every 1 min)  │     │  /resolvable-    │     │  main.ts        │
-└─────────────────┘     │  markets/        │     └────────┬────────┘
-                        └──────────────────┘              │
-                                                          │ fetch floor prices
-                        ┌──────────────────┐              │ (OpenSea / Alchemy)
-                        │  OpenSea API     │◀─────────────┤
-                        │  Alchemy NFT API │              │
-                        └──────────────────┘              │
-                                                          ▼
-                        ┌──────────────────┐     ┌─────────────────┐
-                        │  EVM Chain       │◀────│  Encode & Send  │
-                        │  (Sepolia/Base)  │     │  Report OnChain │
-                        └──────────────────┘     └─────────────────┘
-```
+
 
 ---
 
