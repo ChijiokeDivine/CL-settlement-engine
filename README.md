@@ -252,39 +252,8 @@ cre workflow simulate ./workflow01 --target staging-settings
 
 Ensure the Django backend is running locally (e.g. `http://127.0.0.1:8000`) when using `config.staging.json`.
 
-After this you will get a set of options similar to:
+After this the workflow should immediately execute.
 
-```
-🚀 Workflow simulation ready. Please select a trigger:
-1. cron-trigger@1.0.0 Trigger
-2. evm:ChainSelector:16015286601757825753@1.0.0 LogTrigger
-
-Enter your choice (1-2):
 <img width="650" height="183" alt="image" src="https://github.com/user-attachments/assets/8cd3a6a3-09ac-4759-8e7a-5a1cff227a26" />
 
-```
 
-You can simulate each of the following triggers types as follows
-
-### 7a. Simulating Cron Trigger Workflows
-
-Select option 1, and the workflow should immediately execute.
-
-### 7b. Simulating Log Trigger Workflows
-
-Select option 2, and then two additional prompts will come up and you can pass in the example inputs:
-
-Transaction Hash: 0x9394cc015736e536da215c31e4f59486a8d85f4cfc3641e309bf00c34b2bf410
-Log Event Index: 0
-
-The output will look like:
-
-```
-🔗 EVM Trigger Configuration:
-Please provide the transaction hash and event index for the EVM log event.
-Enter transaction hash (0x...): 0x9394cc015736e536da215c31e4f59486a8d85f4cfc3641e309bf00c34b2bf410
-Enter event index (0-based): 0
-Fetching transaction receipt for transaction 0x9394cc015736e536da215c31e4f59486a8d85f4cfc3641e309bf00c34b2bf410...
-Found log event at index 0: contract=0x1d598672486ecB50685Da5497390571Ac4E93FDc, topics=3
-Created EVM trigger log for transaction 0x9394cc015736e536da215c31e4f59486a8d85f4cfc3641e309bf00c34b2bf410, event 0
-```
