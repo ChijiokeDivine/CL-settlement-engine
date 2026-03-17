@@ -3,6 +3,7 @@
 This project is a **Chainlink CRE (Chainlink Runtime Environment) workflow** that automatically resolves prediction markets on-chain. It fetches resolvable markets from a Django backend, computes outcomes using NFT floor price data (OpenSea & Alchemy), and writes the results to a smart contract via the CRE Keystone Forwarder.
 
 you can view the smart contract (solidity program) here -> https://github.com/ChijiokeDivine/harbor-predict-main
+live site -> https://harbor-fe.vercel.app/
 
 ![screenshot_1 5x](https://github.com/user-attachments/assets/0d98f794-0727-485b-8495-83a7d9bed9ce)
 
